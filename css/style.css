@@ -39,3 +39,38 @@ a { color: var(--teal-dark); }
 .nav-links a.active { background: var(--teal-tint); color: var(--teal-dark); font-weight: 600; }
 .nav-toggle { display: none; }
 .nav-burger { display: none; cursor: pointer; font-size: 26px; padding: 0 8px; }
+/* ---------- Layout ---------- */
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.page-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin: 34px 0 24px; }
+.page-head h1 { font-size: 30px; }
+.page-head p { color: var(--muted); margin-top: 4px; }
+.grid { display: grid; gap: 20px; }
+.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.main-side { grid-template-columns: 2fr 1fr; }
+.stack > * + * { margin-top: 20px; }
+.mb { margin-bottom: 20px; }
+.muted { color: var(--muted); }
+.right { text-align: right; }
+
+/* ---------- Cards ---------- */
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+.card > h2, .card > h3 { margin-bottom: 14px; font-size: 18px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--teal); border-radius: 12px; padding: 18px 20px; }
+.stat b { display: block; font-family: var(--font-head); font-size: 34px; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 14px; }
+.stat.warn { border-left-color: #e0a030; }
+.stat.danger { border-left-color: var(--red); }
+.stat.info { border-left-color: var(--blue); }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-block; padding: 10px 20px; border-radius: 8px; border: 1.5px solid transparent; font: 600 14.5px var(--font-body); cursor: pointer; text-decoration: none; text-align: center; }
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-outline { background: transparent; border-color: var(--teal); color: var(--teal-dark); }
+.btn-outline:hover { background: var(--teal-tint); }
+.btn-danger { background: var(--red); color: #fff; }
+.btn-danger:hover { background: #a92c23; }
+.btn-sm { padding: 6px 12px; font-size: 13px; border-radius: 6px; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
