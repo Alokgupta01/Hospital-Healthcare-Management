@@ -61,3 +61,13 @@ a { color: var(--teal-dark); }
 .stat.warn { border-left-color: #e0a030; }
 .stat.danger { border-left-color: var(--red); }
 .stat.info { border-left-color: var(--blue); }
+
+.btn { display: inline-block; padding: 10px 20px; border-radius: 8px; border: 1.5px solid transparent; font: 600 14.5px var(--font-body); cursor: pointer; text-decoration: none; text-align: center; }
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-primary:hover { background: var(--teal-dark); }
+.btn-outline { background: transparent; border-color: var(--teal); color: var(--teal-dark); }
+.btn-outline:hover { background: var(--teal-tint); }
+.btn-danger { background: var(--red); color: #fff; }
+.btn-danger:hover { background: #a92c23; }
+.btn-sm { padding: 6px 12px; font-size: 13px; border-radius: 6px; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
