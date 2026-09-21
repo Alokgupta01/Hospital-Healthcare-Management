@@ -1,0 +1,35 @@
+=====================================================
+ HHMS - HTML + CSS project  |  TEAM LEADER (Admin)  |  Branch: feature/auth-admin
+=====================================================
+
+Sirf HTML aur CSS use hua hai (JavaScript nahi).
+
+TERI FILES:
+  - index.html
+  - pages/admin.html
+  - css/style.css
+  - css/home.css
+  - css/admin.css
+  - README.md
+  - .gitignore
+
+STEP 1 - GitHub pe repo bana:
+  Name: Hospital-Healthcare-Management-System | Public | Add README + .gitignore (Node) tick kar.
+  Settings -> Collaborators se baaki 3 members ko invite kar.
+
+STEP 2 - Local setup:
+  git clone https://github.com/TERA_USERNAME/Hospital-Healthcare-Management-System
+  cd Hospital-Healthcare-Management-System
+  git switch -c dev
+  git push -u origin dev
+  git switch -c feature/auth-admin
+
+STEP 3 - Zip ke folder ki files repo mein copy kar (README.md aur .gitignore replace kar de), phir:
+  git add index.html pages/admin.html css/style.css css/home.css css/admin.css README.md .gitignore
+  git commit -m "feat: project setup, home page, admin dashboard, shared CSS"
+  git push -u origin feature/auth-admin
+
+STEP 4 - GitHub pe Pull Request bana: base = dev.
+STEP 5 - Baaki 3 members ki PRs review karke dev mein merge kar. Aakhir mein dev -> main.
+
+Browser mein dekhne ke liye index.html double-click kar.

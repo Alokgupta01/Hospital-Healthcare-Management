@@ -1,0 +1,32 @@
+/* Home page styles - Leader */
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding: 60px 0 44px; }
+.hero h1 { font-size: 44px; letter-spacing: -0.5px; margin-bottom: 18px; }
+.hero-text { color: var(--ink-soft); font-size: 17px; max-width: 52ch; margin-bottom: 28px; }
+
+.ecg-panel { background: var(--ink); border-radius: 16px; padding: 28px 28px 8px; }
+.panel-list { list-style: none; margin-top: 12px; }
+.panel-list li { display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid rgba(255, 255, 255, 0.14); color: #c5d8d6; font-size: 15px; }
+.panel-list b { color: #fff; font-family: var(--font-head); font-size: 17px; }
+
+.section-title { font-size: 24px; margin: 28px 0 18px; }
+
+.module { display: block; text-decoration: none; color: inherit; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px; }
+.module:hover { border-color: var(--teal); }
+.module-icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 10px; background: var(--teal-tint); font-size: 22px; margin-bottom: 14px; }
+.module h3 { font-size: 18px; margin-bottom: 6px; }
+.module p { color: var(--muted); font-size: 14.5px; }
+
+.flow { list-style: none; counter-reset: step; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; }
+.flow li { counter-increment: step; padding: 20px; border-right: 1px solid var(--line); }
+.flow li:last-child { border-right: none; }
+.flow li::before { content: counter(step); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--teal); color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+.flow b { display: block; font-family: var(--font-head); font-size: 17px; margin-bottom: 4px; }
+.flow span { color: var(--muted); font-size: 14px; }
+
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; padding-top: 36px; }
+  .hero h1 { font-size: 34px; }
+  .flow { grid-template-columns: 1fr; }
+  .flow li { border-right: none; border-bottom: 1px solid var(--line); }
+  .flow li:last-child { border-bottom: none; }
+}
