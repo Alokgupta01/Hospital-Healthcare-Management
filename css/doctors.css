@@ -1,0 +1,19 @@
+/* Doctors page styles - mem2 */
+.doc-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 16px; }
+.doc-card:hover { border-color: var(--teal); }
+.doc-top { display: flex; align-items: center; gap: 14px; }
+.doc-top h3 { font-size: 18px; }
+.avatar-lg { width: 54px; height: 54px; font-size: 18px; }
+.doc-facts { display: grid; gap: 8px; }
+.doc-facts div { display: flex; justify-content: space-between; font-size: 14.5px; padding-bottom: 8px; border-bottom: 1px dashed var(--line); }
+.doc-facts dt { color: var(--muted); }
+.doc-facts dd { font-weight: 600; }
+.doc-foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+
+.roster th, .roster td { text-align: center; }
+.roster th:first-child, .roster td:first-child { text-align: left; }
+.shift { display: inline-block; min-width: 76px; padding: 4px 8px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+.shift.morning { background: var(--amber-tint); color: var(--amber); }
+.shift.day { background: var(--blue-tint); color: var(--blue); }
+.shift.evening { background: var(--teal-tint); color: var(--teal-dark); }
+.shift.off { background: #eceff0; color: var(--muted); }
