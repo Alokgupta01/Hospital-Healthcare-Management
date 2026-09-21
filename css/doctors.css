@@ -8,3 +8,10 @@
 .doc-facts dt { color: var(--muted); }
 .doc-facts dd { font-weight: 600; }
 .doc-foot { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+.roster th, .roster td { text-align: center; }
+.roster th:first-child, .roster td:first-child { text-align: left; }
+.shift { display: inline-block; min-width: 76px; padding: 4px 8px; border-radius: 6px; font-size: 13px; font-weight: 600; }
+.shift.morning { background: var(--amber-tint); color: var(--amber); }
+.shift.day { background: var(--blue-tint); color: var(--blue); }
+.shift.evening { background: var(--teal-tint); color: var(--teal-dark); }
+.shift.off { background: #eceff0; color: var(--muted); }
