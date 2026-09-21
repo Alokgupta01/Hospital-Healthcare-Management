@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing - HHMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/billing.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">+</span>HHMS</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open menu">&#9776;</label>
+    <nav class="nav-links"><a href="../index.html">Home</a><a href="patients.html">Patients</a><a href="records.html">Records</a><a href="doctors.html">Doctors</a><a href="appointments.html">Appointments</a><a href="billing.html" class="active">Billing</a><a href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Billing</h1>
+        <p>Create invoices and follow up on pending payments.</p>
+      </div>
+    </div>
+
+    <section class="grid cols-3 mb">
+      <div class="stat"><b>&#8377;4,82,500</b><span>Billed this month</span></div>
+      <div class="stat info"><b>&#8377;3,96,000</b><span>Payments received</span></div>
+      <div class="stat danger"><b>&#8377;86,500</b><span>Pending</span></div>
+    </section>
+
+    <section class="grid bill-layout mb">
+      <div class="card">
+        <h2>Recent invoices</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Invoice</th><th>Patient</th><th>Date</th><th>Amount</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody>
+              <tr><td>INV-1042</td><td>Rohan Sharma</td><td>21 Sep 2026</td><td>&#8377;2,200</td><td><span class="badge badge-green">Paid</span></td><td><a class="btn btn-outline btn-sm" href="#inv-1042">View</a></td></tr>
+              <tr><td>INV-1041</td><td>Sneha Gupta</td><td>21 Sep 2026</td><td>&#8377;1,200</td><td><span class="badge badge-amber">Pending</span></td><td><a class="btn btn-outline btn-sm" href="#inv-1041">View</a></td></tr>
+              <tr><td>INV-1040</td><td>Priya Verma</td><td>20 Sep 2026</td><td>&#8377;18,400</td><td><span class="badge badge-amber">Part paid</span></td><td><a class="btn btn-outline btn-sm" href="#inv-1042">View</a></td></tr>
+              <tr><td>INV-1039</td><td>Amit Yadav</td><td>19 Sep 2026</td><td>&#8377;9,750</td><td><span class="badge badge-green">Paid</span></td><td><a class="btn btn-outline btn-sm" href="#inv-1042">View</a></td></tr>
+              <tr><td>INV-1038</td><td>Kabir Singh</td><td>18 Sep 2026</td><td>&#8377;600</td><td><span class="badge badge-red">Overdue</span></td><td><a class="btn btn-outline btn-sm" href="#inv-1041">View</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Create bill</h2>
+        <form>
+          <div class="form-grid" style="grid-template-columns:1fr;">
+            <div class="field"><label for="b-patient">Patient</label>
+              <select id="b-patient"><option>Rohan Sharma (P-1001)</option><option>Priya Verma (P-1002)</option><option>Sneha Gupta (P-1004)</option></select>
+            </div>
+            <div class="field"><label for="b-service">Service</label>
+              <select id="b-service"><option>Consultation</option><option>Lab test</option><option>X-ray</option><option>Room charges</option><option>Medicines</option></select>
+            </div>
+            <div class="field"><label for="b-amount">Amount (&#8377;)</label><input id="b-amount" type="number" min="0"></div>
+            <div class="field">
+              <span class="group-label">Payment method</span>
+              <div class="methods">
+                <input type="radio" name="pay" id="m1" checked><label for="m1">Cash</label>
+                <input type="radio" name="pay" id="m2"><label for="m2">UPI</label>
+                <input type="radio" name="pay" id="m3"><label for="m3">Card</label>
+                <input type="radio" name="pay" id="m4"><label for="m4">Insurance</label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-primary" type="button">Generate invoice</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
