@@ -99,3 +99,31 @@
       </div>
     </section>
   </main>
+
+    <!-- Add staff popup (CSS only) -->
+  <div class="modal" id="add-staff">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2>Add staff member</h2>
+        <a class="modal-close" href="#" aria-label="Close">&times;</a>
+      </div>
+      <form>
+        <div class="form-grid">
+          <div class="field"><label for="s-name">Full name</label><input id="s-name" type="text" placeholder="e.g. Ritu Saxena"></div>
+          <div class="field"><label for="s-role">Role</label>
+            <select id="s-role"><option>Nurse</option><option>Receptionist</option><option>Pharmacist</option><option>Lab technician</option></select>
+          </div>
+          <div class="field"><label for="s-phone">Phone</label><input id="s-phone" type="tel" placeholder="10-digit number"></div>
+          <div class="field"><label for="s-email">Email</label><input id="s-email" type="email" placeholder="name@hospital.com"></div>
+        </div>
+        <div class="modal-actions">
+          <a class="btn btn-outline" href="#">Cancel</a>
+          <button class="btn btn-primary" type="button">Save staff member</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">HHMS - Hospital and Healthcare Management System &middot; GLA University, Mathura</footer>
+</body>
+</html>
