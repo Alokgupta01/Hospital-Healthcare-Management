@@ -74,3 +74,17 @@ a { color: var(--teal-dark); }
 .btn-danger:hover { background: #a92c23; }
 .btn-sm { padding: 6px 12px; font-size: 13px; border-radius: 6px; }
 .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+/* ---------- Forms ---------- */
+.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 20px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field.full { grid-column: 1 / -1; }
+label { font-weight: 600; font-size: 14px; }
+input, select, textarea { padding: 10px 12px; border: 1px solid #b9cbc8; border-radius: 8px; font: inherit; background: #fff; color: var(--ink); width: 100%; }
+textarea { min-height: 90px; resize: vertical; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-tint); }
+.toolbar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 18px; }
+.toolbar input[type="search"] { max-width: 320px; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chips a { text-decoration: none; padding: 6px 15px; border-radius: 99px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft); font-size: 14px; font-weight: 500; }
+.chips a:hover { border-color: var(--teal); }
+.chips a.on { background: var(--teal); border-color: var(--teal); color: #fff; }
