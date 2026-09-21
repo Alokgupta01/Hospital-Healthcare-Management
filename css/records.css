@@ -1,0 +1,7 @@
+.summary { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.summary .avatar { width: 64px; height: 64px; font-size: 22px; }
+.summary h2 { font-size: 24px; }
+.summary-facts { display: flex; gap: 28px; flex-wrap: wrap; margin-left: auto; }
+.summary-facts div { font-size: 14px; }
+.summary-facts small { display: block; color: var(--muted); }
+.summary-facts b { font-size: 16px; }
