@@ -5,3 +5,9 @@
 .summary-facts div { font-size: 14px; }
 .summary-facts small { display: block; color: var(--muted); }
 .summary-facts b { font-size: 16px; }
+
+.vitals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.vital { background: var(--bg); border-radius: 10px; padding: 16px; }
+.vital small { color: var(--muted); display: block; }
+.vital b { font-family: var(--font-head); font-size: 24px; }
+.vital em { font-style: normal; font-size: 13px; color: var(--muted); margin-left: 3px; }
