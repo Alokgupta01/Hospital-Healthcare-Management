@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors - HHMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/doctors.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">+</span>HHMS</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open menu">&#9776;</label>
+    <nav class="nav-links"><a href="../index.html">Home</a><a href="patients.html">Patients</a><a href="records.html">Records</a><a href="doctors.html" class="active">Doctors</a><a href="appointments.html">Appointments</a><a href="billing.html">Billing</a><a href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Doctors</h1>
+        <p>Find a doctor by department and check who is available today.</p>
+      </div>
+      <a class="btn btn-primary" href="#add-doctor">Add doctor</a>
+    </div>
+
+    <div class="toolbar">
+      <input type="search" placeholder="Search doctor by name" aria-label="Search doctors">
+      <div class="chips">
+        <a href="#" class="on">All</a>
+        <a href="#">Cardiology</a>
+        <a href="#">Orthopedics</a>
+        <a href="#">Pediatrics</a>
+        <a href="#">General medicine</a>
+        <a href="#">Dermatology</a>
+      </div>
+    </div>
+
+    <section class="grid cols-3 mb">
+      <article class="doc-card">
+        <div class="doc-top">
+          <span class="avatar avatar-lg">AM</span>
+          <div><h3>Dr. Anjali Mehra</h3><span class="muted">Cardiologist</span></div>
+        </div>
+        <dl class="doc-facts">
+          <div><dt>Experience</dt><dd>14 years</dd></div>
+          <div><dt>Timing</dt><dd>10 AM to 2 PM</dd></div>
+          <div><dt>Consultation fee</dt><dd>&#8377;800</dd></div>
+        </dl>
+        <div class="doc-foot"><span class="badge badge-green">Available today</span><a class="btn btn-primary btn-sm" href="appointments.html">Book</a></div>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-top">
+          <span class="avatar avatar-lg">VR</span>
+          <div><h3>Dr. Vikram Rao</h3><span class="muted">Orthopedic surgeon</span></div>
+        </div>
+        <dl class="doc-facts">
+          <div><dt>Experience</dt><dd>11 years</dd></div>
+          <div><dt>Timing</dt><dd>11 AM to 4 PM</dd></div>
+          <div><dt>Consultation fee</dt><dd>&#8377;700</dd></div>
+        </dl>
+        <div class="doc-foot"><span class="badge badge-green">Available today</span><a class="btn btn-primary btn-sm" href="appointments.html">Book</a></div>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-top">
+          <span class="avatar avatar-lg">NK</span>
+          <div><h3>Dr. Neha Kapoor</h3><span class="muted">Pediatrician</span></div>
+        </div>
+        <dl class="doc-facts">
+          <div><dt>Experience</dt><dd>9 years</dd></div>
+          <div><dt>Timing</dt><dd>9 AM to 1 PM</dd></div>
+          <div><dt>Consultation fee</dt><dd>&#8377;600</dd></div>
+        </dl>
+        <div class="doc-foot"><span class="badge badge-amber">Busy until 12 PM</span><a class="btn btn-primary btn-sm" href="appointments.html">Book</a></div>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-top">
+          <span class="avatar avatar-lg">SN</span>
+          <div><h3>Dr. Suresh Nair</h3><span class="muted">General physician</span></div>
+        </div>
+        <dl class="doc-facts">
+          <div><dt>Experience</dt><dd>20 years</dd></div>
+          <div><dt>Timing</dt><dd>9 AM to 5 PM</dd></div>
+          <div><dt>Consultation fee</dt><dd>&#8377;500</dd></div>
+        </dl>
+        <div class="doc-foot"><span class="badge badge-green">Available today</span><a class="btn btn-primary btn-sm" href="appointments.html">Book</a></div>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-top">
+          <span class="avatar avatar-lg">IB</span>
+          <div><h3>Dr. Isha Bansal</h3><span class="muted">Dermatologist</span></div>
+        </div>
+        <dl class="doc-facts">
+          <div><dt>Experience</dt><dd>6 years</dd></div>
+          <div><dt>Timing</dt><dd>12 PM to 6 PM</dd></div>
+          <div><dt>Consultation fee</dt><dd>&#8377;600</dd></div>
+        </dl>
+        <div class="doc-foot"><span class="badge badge-red">On leave</span><a class="btn btn-outline btn-sm" href="#">Unavailable</a></div>
+      </article>
+
+      <article class="doc-card">
+        <div class="doc-top">
+          <span class="avatar avatar-lg">RJ</span>
+          <div><h3>Dr. Rahul Joshi</h3><span class="muted">Cardiologist</span></div>
+        </div>
+        <dl class="doc-facts">
+          <div><dt>Experience</dt><dd>8 years</dd></div>
+          <div><dt>Timing</dt><dd>2 PM to 7 PM</dd></div>
+          <div><dt>Consultation fee</dt><dd>&#8377;750</dd></div>
+        </dl>
+        <div class="doc-foot"><span class="badge badge-green">Available today</span><a class="btn btn-primary btn-sm" href="appointments.html">Book</a></div>
+      </article>
+    </section>
+
+    <section class="card">
+      <h2>Weekly duty roster</h2>
+      <div class="table-wrap">
+        <table class="roster">
+          <thead>
+            <tr><th>Doctor</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Dr. Anjali Mehra</td><td><span class="shift morning">Morning</span></td><td><span class="shift morning">Morning</span></td><td><span class="shift off">Off</span></td><td><span class="shift morning">Morning</span></td><td><span class="shift morning">Morning</span></td><td><span class="shift off">Off</span></td></tr>
+            <tr><td>Dr. Vikram Rao</td><td><span class="shift day">Day</span></td><td><span class="shift off">Off</span></td><td><span class="shift day">Day</span></td><td><span class="shift day">Day</span></td><td><span class="shift off">Off</span></td><td><span class="shift day">Day</span></td></tr>
+            <tr><td>Dr. Neha Kapoor</td><td><span class="shift morning">Morning</span></td><td><span class="shift morning">Morning</span></td><td><span class="shift morning">Morning</span></td><td><span class="shift off">Off</span></td><td><span class="shift morning">Morning</span></td><td><span class="shift morning">Morning</span></td></tr>
+            <tr><td>Dr. Suresh Nair</td><td><span class="shift day">Day</span></td><td><span class="shift day">Day</span></td><td><span class="shift day">Day</span></td><td><span class="shift day">Day</span></td><td><span class="shift day">Day</span></td><td><span class="shift off">Off</span></td></tr>
+            <tr><td>Dr. Rahul Joshi</td><td><span class="shift evening">Evening</span></td><td><span class="shift evening">Evening</span></td><td><span class="shift evening">Evening</span></td><td><span class="shift off">Off</span></td><td><span class="shift evening">Evening</span></td><td><span class="shift evening">Evening</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
