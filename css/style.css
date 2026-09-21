@@ -71,3 +71,17 @@ a { color: var(--teal-dark); }
 .btn-danger:hover { background: #a92c23; }
 .btn-sm { padding: 6px 12px; font-size: 13px; border-radius: 6px; }
 .btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.badge { display: inline-block; padding: 3px 11px; border-radius: 99px; font-size: 12.5px; font-weight: 600; }
+.badge-green { background: var(--green-tint); color: var(--green); }
+.badge-amber { background: var(--amber-tint); color: var(--amber); }
+.badge-red { background: var(--red-tint); color: var(--red); }
+.badge-blue { background: var(--blue-tint); color: var(--blue); }
+.badge-gray { background: #e8eeed; color: var(--ink-soft); }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+th { text-align: left; font-weight: 600; color: var(--ink-soft); background: #eef5f4; padding: 12px 14px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 13px 14px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+tbody tr:hover { background: #f7fbfa; }
+tbody tr:last-child td { border-bottom: none; }
