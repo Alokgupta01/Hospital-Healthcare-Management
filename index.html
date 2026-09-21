@@ -26,3 +26,68 @@
           <a class="btn btn-outline" href="pages/appointments.html">Book an appointment</a>
         </div>
       </div>
+
+      <div class="ecg-panel">
+        <svg class="ecg" viewBox="0 0 800 120" role="img" aria-label="Heartbeat line">
+          <path pathLength="1000" d="M0 70 H150 l10 -12 l10 12 H250 l10 12 l14 -62 l14 92 l10 -42 H400 l12 -16 l14 16 H560 l10 12 l14 -62 l14 92 l10 -42 H800"/>
+        </svg>
+        <ul class="panel-list">
+          <li><span>OPD patients waiting</span><b>24</b></li>
+          <li><span>Beds available</span><b>18 of 60</b></li>
+          <li><span>Doctors on duty</span><b>12</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Modules</h2>
+      <div class="grid cols-3">
+        <a class="module" href="pages/patients.html">
+          <span class="module-icon">&#128101;</span>
+          <h3>Patients</h3>
+          <p>Register new patients and search existing ones.</p>
+        </a>
+        <a class="module" href="pages/records.html">
+          <span class="module-icon">&#128203;</span>
+          <h3>Medical records</h3>
+          <p>Vitals, visit history, prescriptions and lab reports.</p>
+        </a>
+        <a class="module" href="pages/doctors.html">
+          <span class="module-icon">&#129658;</span>
+          <h3>Doctors</h3>
+          <p>Departments, availability and duty roster.</p>
+        </a>
+        <a class="module" href="pages/appointments.html">
+          <span class="module-icon">&#128197;</span>
+          <h3>Appointments</h3>
+          <p>Pick a doctor, choose a slot and confirm the visit.</p>
+        </a>
+        <a class="module" href="pages/billing.html">
+          <span class="module-icon">&#128181;</span>
+          <h3>Billing</h3>
+          <p>Create invoices and track pending payments.</p>
+        </a>
+        <a class="module" href="pages/admin.html">
+          <span class="module-icon">&#9881;</span>
+          <h3>Admin dashboard</h3>
+          <p>Hospital-wide numbers at a glance.</p>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">How a visit flows through HHMS</h2>
+      <ol class="flow">
+        <li><b>Register</b><span>Reception adds the patient details.</span></li>
+        <li><b>Book</b><span>An appointment slot is fixed with a doctor.</span></li>
+        <li><b>Consult</b><span>The doctor sees the patient and notes vitals.</span></li>
+        <li><b>Record</b><span>Diagnosis and prescription are saved.</span></li>
+        <li><b>Bill</b><span>An invoice is generated and paid.</span></li>
+      </ol>
+    </section>
+
+  </main>
+
+  <footer class="footer">HHMS - Hospital and Healthcare Management System &middot; GLA University, Mathura</footer>
+</body>
+</html>
