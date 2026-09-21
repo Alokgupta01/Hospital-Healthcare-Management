@@ -95,6 +95,33 @@
         </table>
       </div>
     </section>
+
+    <div class="modal" id="add-record">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2>Add new record</h2>
+        <a class="modal-close" href="#" aria-label="Close">&times;</a>
+      </div>
+      <form>
+        <div class="form-grid">
+          <div class="field"><label for="r-date">Visit date</label><input id="r-date" type="date"></div>
+          <div class="field"><label for="r-doctor">Doctor</label>
+            <select id="r-doctor"><option>Dr. Anjali Mehra</option><option>Dr. Vikram Rao</option><option>Dr. Neha Kapoor</option><option>Dr. Suresh Nair</option></select>
+          </div>
+          <div class="field"><label for="r-bp">Blood pressure</label><input id="r-bp" type="text" placeholder="e.g. 120/80"></div>
+          <div class="field"><label for="r-pulse">Pulse (bpm)</label><input id="r-pulse" type="number"></div>
+          <div class="field full"><label for="r-diagnosis">Diagnosis</label><textarea id="r-diagnosis"></textarea></div>
+          <div class="field full"><label for="r-rx">Prescription</label><textarea id="r-rx" placeholder="Medicine, dosage, duration"></textarea></div>
+        </div>
+        <div class="modal-actions">
+          <a class="btn btn-outline" href="#">Cancel</a>
+          <button class="btn btn-primary" type="button">Save record</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">HHMS - Hospital and Healthcare Management System &middot; GLA University, Mathura</footer>
     
 </body>
 </html>
