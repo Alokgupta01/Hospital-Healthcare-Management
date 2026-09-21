@@ -99,3 +99,35 @@
       </div>
     </div>
   </main>
+
+  <!-- Register patient popup (CSS only) -->
+  <div class="modal" id="add-patient">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2>Register new patient</h2>
+        <a class="modal-close" href="#" aria-label="Close">&times;</a>
+      </div>
+      <form>
+        <div class="form-grid">
+          <div class="field full"><label for="p-name">Full name</label><input id="p-name" type="text" placeholder="e.g. Rohan Sharma"></div>
+          <div class="field"><label for="p-age">Age</label><input id="p-age" type="number" min="0" max="120"></div>
+          <div class="field"><label for="p-gender">Gender</label>
+            <select id="p-gender"><option>Male</option><option>Female</option><option>Other</option></select>
+          </div>
+          <div class="field"><label for="p-blood">Blood group</label>
+            <select id="p-blood"><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
+          </div>
+          <div class="field"><label for="p-phone">Phone</label><input id="p-phone" type="tel" placeholder="10-digit number"></div>
+          <div class="field full"><label for="p-address">Address</label><textarea id="p-address" placeholder="House no, street, city"></textarea></div>
+        </div>
+        <div class="modal-actions">
+          <a class="btn btn-outline" href="#">Cancel</a>
+          <button class="btn btn-primary" type="button">Save patient</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">HHMS - Hospital and Healthcare Management System &middot; GLA University, Mathura</footer>
+</body>
+</html>
