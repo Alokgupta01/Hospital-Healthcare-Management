@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patients - HHMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/patients.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">+</span>HHMS</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open menu">&#9776;</label>
+    <nav class="nav-links"><a href="../index.html">Home</a><a href="patients.html" class="active">Patients</a><a href="records.html">Records</a><a href="doctors.html">Doctors</a><a href="appointments.html">Appointments</a><a href="billing.html">Billing</a><a href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Patients</h1>
+        <p>Search, register and manage patient details.</p>
+      </div>
+      <a class="btn btn-primary" href="#add-patient">Register new patient</a>
+    </div>
+
+    <div class="card">
+      <div class="toolbar">
+        <input type="search" placeholder="Search by name, ID or phone" aria-label="Search patients">
+        <div class="chips">
+          <a href="#" class="on">All (1,284)</a>
+          <a href="#">Outpatient</a>
+          <a href="#">Admitted</a>
+          <a href="#">Discharged</a>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>ID</th><th>Patient</th><th>Age / Gender</th><th>Blood group</th><th>Phone</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>P-1001</td>
+              <td><div class="person"><span class="avatar">RS</span><div>Rohan Sharma<small>Mathura</small></div></div></td>
+              <td>34 / Male</td><td><span class="blood">B+</span></td><td>98xxxxxx01</td>
+              <td><span class="badge badge-green">Outpatient</span></td>
+              <td><div class="btn-row"><a class="btn btn-outline btn-sm" href="records.html">View record</a><a class="btn btn-outline btn-sm" href="#add-patient">Edit</a></div></td>
+            </tr>
+            <tr>
+              <td>P-1002</td>
+              <td><div class="person"><span class="avatar">PV</span><div>Priya Verma<small>Agra</small></div></div></td>
+              <td>27 / Female</td><td><span class="blood">O+</span></td><td>98xxxxxx02</td>
+              <td><span class="badge badge-blue">Admitted</span></td>
+              <td><div class="btn-row"><a class="btn btn-outline btn-sm" href="records.html">View record</a><a class="btn btn-outline btn-sm" href="#add-patient">Edit</a></div></td>
+            </tr>
+            <tr>
+              <td>P-1003</td>
+              <td><div class="person"><span class="avatar">MK</span><div>Mohit Kumar<small>Vrindavan</small></div></div></td>
+              <td>52 / Male</td><td><span class="blood">A+</span></td><td>98xxxxxx03</td>
+              <td><span class="badge badge-blue">Admitted</span></td>
+              <td><div class="btn-row"><a class="btn btn-outline btn-sm" href="records.html">View record</a><a class="btn btn-outline btn-sm" href="#add-patient">Edit</a></div></td>
+            </tr>
+            <tr>
+              <td>P-1004</td>
+              <td><div class="person"><span class="avatar">SG</span><div>Sneha Gupta<small>Mathura</small></div></div></td>
+              <td>41 / Female</td><td><span class="blood">AB+</span></td><td>98xxxxxx04</td>
+              <td><span class="badge badge-green">Outpatient</span></td>
+              <td><div class="btn-row"><a class="btn btn-outline btn-sm" href="records.html">View record</a><a class="btn btn-outline btn-sm" href="#add-patient">Edit</a></div></td>
+            </tr>
+            <tr>
+              <td>P-1005</td>
+              <td><div class="person"><span class="avatar">AY</span><div>Amit Yadav<small>Aligarh</small></div></div></td>
+              <td>60 / Male</td><td><span class="blood">O-</span></td><td>98xxxxxx05</td>
+              <td><span class="badge badge-gray">Discharged</span></td>
+              <td><div class="btn-row"><a class="btn btn-outline btn-sm" href="records.html">View record</a><a class="btn btn-outline btn-sm" href="#add-patient">Edit</a></div></td>
+            </tr>
+            <tr>
+              <td>P-1006</td>
+              <td><div class="person"><span class="avatar">KS</span><div>Kabir Singh<small>Mathura</small></div></div></td>
+              <td>8 / Male</td><td><span class="blood">B-</span></td><td>98xxxxxx06</td>
+              <td><span class="badge badge-green">Outpatient</span></td>
+              <td><div class="btn-row"><a class="btn btn-outline btn-sm" href="records.html">View record</a><a class="btn btn-outline btn-sm" href="#add-patient">Edit</a></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pagination">
+        <span class="muted">Showing 1 to 6 of 1,284 patients</span>
+        <div class="btn-row">
+          <a class="btn btn-outline btn-sm" href="#">Previous</a>
+          <a class="btn btn-primary btn-sm" href="#">1</a>
+          <a class="btn btn-outline btn-sm" href="#">2</a>
+          <a class="btn btn-outline btn-sm" href="#">3</a>
+          <a class="btn btn-outline btn-sm" href="#">Next</a>
+        </div>
+      </div>
+    </div>
+  </main>
