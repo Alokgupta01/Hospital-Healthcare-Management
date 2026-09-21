@@ -1,0 +1,20 @@
+/* Appointments page styles - mem3 */
+.book-layout { grid-template-columns: 1.6fr 1fr; }
+.group-label { font-weight: 600; font-size: 14px; }
+
+/* Time slots - pure CSS radio buttons */
+.slots { display: flex; flex-wrap: wrap; gap: 10px; }
+.slots input { position: absolute; opacity: 0; width: 0; height: 0; }
+.slots label { padding: 8px 16px; border: 1.5px solid var(--line); border-radius: 8px; font-weight: 500; cursor: pointer; background: #fff; }
+.slots label:hover { border-color: var(--teal); }
+.slots input:checked + label { background: var(--teal); border-color: var(--teal); color: #fff; }
+.slots input:focus-visible + label { outline: 3px solid #f0a92e; outline-offset: 2px; }
+.slots input:disabled + label { background: #eceff0; color: #9aa9ad; text-decoration: line-through; cursor: not-allowed; border-color: #eceff0; }
+
+.upnext { list-style: none; }
+.upnext li { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.upnext li:last-child { border-bottom: none; }
+.upnext time { min-width: 76px; font-weight: 600; color: var(--teal-dark); }
+.upnext small { display: block; color: var(--muted); font-size: 13.5px; }
+
+@media (max-width: 960px) { .book-layout { grid-template-columns: 1fr; } }
