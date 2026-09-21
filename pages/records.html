@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Records - HHMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/records.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">+</span>HHMS</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open menu">&#9776;</label>
+    <nav class="nav-links"><a href="../index.html">Home</a><a href="patients.html">Patients</a><a href="records.html" class="active">Records</a><a href="doctors.html">Doctors</a><a href="appointments.html">Appointments</a><a href="billing.html">Billing</a><a href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Medical records</h1>
+        <p>Visit history, prescriptions and lab reports for a patient.</p>
+      </div>
+      <a class="btn btn-primary" href="#add-record">Add new record</a>
+    </div>
+
+    <section class="card mb">
+      <div class="summary">
+        <span class="avatar">RS</span>
+        <div>
+          <h2>Rohan Sharma</h2>
+          <span class="muted">Patient ID P-1001</span>
+        </div>
+        <div class="summary-facts">
+          <div><small>Age / Gender</small><b>34 / Male</b></div>
+          <div><small>Blood group</small><b>B+</b></div>
+          <div><small>Allergies</small><b>Penicillin</b></div>
+          <div><small>Last visit</small><b>12 Sep 2026</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card mb">
+      <h2>Latest vitals</h2>
+      <div class="vitals">
+        <div class="vital"><small>Blood pressure</small><b>124/82</b><em>mmHg</em></div>
+        <div class="vital"><small>Pulse</small><b>76</b><em>bpm</em></div>
+        <div class="vital"><small>Temperature</small><b>98.4</b><em>&deg;F</em></div>
+        <div class="vital"><small>Oxygen level</small><b>98</b><em>%</em></div>
+      </div>
+    </section>
+
+    <section class="grid main-side mb">
+      <div class="card">
+        <h2>Visit history</h2>
+        <ol class="timeline">
+          <li>
+            <time>12 Sep 2026</time>
+            <h4>Cardiology follow-up</h4>
+            <p>Dr. Anjali Mehra. ECG normal. Continue current medication for 4 weeks.</p>
+          </li>
+          <li>
+            <time>28 Aug 2026</time>
+            <h4>Chest pain consultation</h4>
+            <p>Dr. Anjali Mehra. Advised ECG and blood tests. Started on a low-dose beta blocker.</p>
+          </li>
+          <li>
+            <time>03 Jun 2026</time>
+            <h4>General check-up</h4>
+            <p>Dr. Suresh Nair. Routine health check. Advised regular exercise and reduced salt.</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>Lab reports</h2>
+        <div class="report"><div>Lipid profile<small>05 Sep 2026</small></div><a class="btn btn-outline btn-sm" href="#">Download</a></div>
+        <div class="report"><div>Complete blood count<small>05 Sep 2026</small></div><a class="btn btn-outline btn-sm" href="#">Download</a></div>
+        <div class="report"><div>ECG report<small>28 Aug 2026</small></div><a class="btn btn-outline btn-sm" href="#">Download</a></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Prescriptions</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Date</th><th>Medicine</th><th>Dosage</th><th>Duration</th><th>Prescribed by</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>12 Sep 2026</td><td>Metoprolol 25 mg</td><td>Once daily, morning</td><td>4 weeks</td><td>Dr. Anjali Mehra</td></tr>
+            <tr><td>12 Sep 2026</td><td>Atorvastatin 10 mg</td><td>Once daily, night</td><td>4 weeks</td><td>Dr. Anjali Mehra</td></tr>
+            <tr><td>28 Aug 2026</td><td>Pantoprazole 40 mg</td><td>Before breakfast</td><td>10 days</td><td>Dr. Anjali Mehra</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
