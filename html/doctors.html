@@ -163,3 +163,29 @@
           </table>
         </div>
       </section>
+          
+    <div class="modal" id="add-doctor">
+      <div class="modal-box">
+        <div class="modal-head">
+          <h2>Add doctor</h2>
+          <a class="modal-close" href="#" aria-label="Close">&times;</a>
+        </div>
+        <form>
+          <div class="form-grid">
+            <div class="field full"><label for="d-name">Full name</label><input id="d-name" type="text" placeholder="e.g. Dr. Meera Iyer"></div>
+            <div class="field"><label for="d-dept">Department</label>
+              <select id="d-dept"><option>Cardiology</option><option>Orthopedics</option><option>Pediatrics</option><option>General medicine</option><option>Dermatology</option></select>
+            </div>
+            <div class="field"><label for="d-exp">Experience (years)</label><input id="d-exp" type="number" min="0"></div>
+            <div class="field"><label for="d-fee">Consultation fee (&#8377;)</label><input id="d-fee" type="number" min="0"></div>
+            <div class="field"><label for="d-phone">Phone</label><input id="d-phone" type="tel"></div>
+            <div class="field"><label for="d-from">Available from</label><input id="d-from" type="time"></div>
+            <div class="field"><label for="d-to">Available till</label><input id="d-to" type="time"></div>
+          </div>
+          <div class="modal-actions">
+            <a class="btn btn-outline" href="#">Cancel</a>
+            <button class="btn btn-primary" type="button">Save doctor</button>
+          </div>
+        </form>
+      </div>
+    </div>
