@@ -1,108 +1,65 @@
-# Genomic Data Visualization Experience
+# Doctors Module — HHMS
  
-**Mini Project-1** &middot; Semester V &middot; GLA University, Mathura
-Department of Computer Engineering & Applications
-**Guide:** Mr. Anurag Das &middot; **Batch:** 8 &middot; **Section:** 3 GA
+Part of the **Hospital and Healthcare Management System (HHMS)** group project.
+College project — GLA University, Mathura. Built with **only HTML and CSS** (no JavaScript).
  
-An interactive, browser-based tool to explore genomic variants through zoomable chromosome and variant tracks,
-with client-side filtering and a detailed variant-information panel. Built entirely with HTML, CSS and JavaScript
-using the Canvas API — no server, no installation, no external framework.
+**Member:** Alok Kumar Singh
+**Branch:** `feature/doctor`
+**Files owned:** `doctors.html`, `doctors.css`
  
-> The bundled dataset is **synthetic** (randomly generated for demonstration purposes only) and is not real
-> patient data. Gene coordinates and centromere positions are approximate GRCh38 values used for display.
+## What this page does
  
----
+The Doctors page (`pages/doctors.html`) shows the hospital's doctor directory and duty schedule:
  
-## Team
+- **Doctor cards** — a grid of doctor profiles (name, specialization, availability) for doctors like
+  Dr. Anjali Mehra, Dr. Vikram Rao, Dr. Neha Kapoor, Dr. Suresh Nair, Dr. Isha Bansal and Dr. Rahul Joshi
+- **Search doctor by name** — a search box (design only, since the project has no JavaScript)
+- **Weekly duty roster** — a table of doctors against Mon–Sat showing their duty schedule
+- **Add doctor** — a form to add a new doctor (front-end form only, no backend)
+All styling for this page is in `doctors.css`. Shared elements (navbar, footer, buttons, tables) come from
+the shared `css/style.css`, which is owned by the team leader — do not edit that file from this branch.
  
-| # | Name | Roll No. | Role |
-|---|------|----------|------|
-| 1 | Vishwas Parashar | 2415001804 | Project Lead & Frontend Developer |
-| 2 | Yash | 2415001820 | Visualization & Rendering Developer |
-| 3 | Uppuluri Sri Praneeth | 2315002348 | Data & Genomic Analysis Developer |
-| 4 | Vishesh Dwivedi | 2415001794 | Backend / Testing & Documentation |
+## Files in this folder
  
-## Project description
+| File | Purpose |
+| --- | --- |
+| `doctors.html` | The Doctors page markup |
+| `doctors.css` | Styling specific to this page (doctor cards, roster table, add-doctor form) |
+| `START-HERE.txt` | Git commands to push this module to your branch |
  
-The project provides scientific visualization of genomic datasets through an interactive, zoomable
-chromosome-based track view. Custom tracks represent chromosomes, genomic regions and variants so their
-distribution and location can be understood at a glance. Real-time, client-side filtering lets users search
-and analyze variants by type, impact and allele frequency without any server round trip.
+## How to preview
  
-## Objectives
+Open `doctors.html` in a browser. For the navbar/footer links to work correctly it should sit inside the full
+project structure (`pages/doctors.html` next to the other pages and `../css/`), so preview it from within the
+full project folder rather than standalone.
  
-- Interactive, zoomable visualization of chromosomes, genomic regions and variants
-- Efficient in-memory data handling with instant client-side filtering and search
-- A variant-detail panel showing chromosome, position, reference/alternate allele and other attributes
-- Smooth, custom client-side rendering for zooming, navigation and selection on large datasets
-## Features
+## Git workflow
  
-- **Genome overview** — all 24 chromosomes as density-coloured bars; click one to open it
-- **Zoomable chromosome view** — ruler, chromosome ideogram with centromere, gene track, density histogram, variant track
-- **Interaction** — mouse-wheel zoom, drag to pan, double-click to zoom, keyboard shortcuts, click-to-jump on the chromosome bar
-- **Variant markers** — colour = impact (High / Moderate / Low / Modifier), shape = type (SNP / Insertion / Deletion / MNP), height = allele frequency
-- **Client-side filtering** — free-text search, impact, variant type, allele-frequency range
-- **Variant details panel** — chromosome, position, REF/ALT, type, impact, allele frequency, gene, consequence
-- **Locus / gene / variant search** — e.g. `chr17:7,600,000-7,700,000`, `TP53`, `VAR00100`
-- **Load your own dataset** — CSV or JSON, with validation and a report of any skipped rows
-- **Export** — filtered variants (CSV / JSON), variants in the current view (CSV), current view as an image (PNG)
-- **Shareable view** — the URL records the chromosome, window and selected variant
-## Tools & technologies
+```bash
+git clone <repo-url>
+cd Hospital-Healthcare-Management-System
+git switch dev
+git pull origin dev
+git switch -c feature/doctor
  
-HTML5 &middot; CSS3 &middot; JavaScript &middot; Canvas API &middot; CSV/JSON datasets &middot; VS Code &middot; Git/GitHub
+# copy your files in:
+#   pages/doctors.html
+#   css/doctors.css
  
-## Project structure
- 
-```
-Genomic-Data-Visualization-Experience/
-  index.html
-  css/
-    style.css              layout, typography, UI components
-    visualization.css      canvas containers, legend, tooltip
-  js/
-    genome.js               reference genome constants
-    parser.js                CSV / JSON parsing and validation
-    data.js                   variant store, indexing, filters, statistics
-    tracks.js                 track drawing functions
-    renderer.js               interactive chromosome view
-    overview.js                genome overview canvas
-    export.js                  CSV / JSON / PNG export
-    state.js                    URL hash + saved filters
-    ui.js                        interface (filters, table, details, tooltip)
-    app.js                        connects every module
-  data/
-    dataset.js               built-in demo dataset
-    variants.csv              same data as CSV
-  tools/
-    generate_dataset.py       script that generated the demo dataset
-  tests/                      automated unit tests (open tests/tests.html)
-  docs/                        user guide, technical docs, team work division
+git add pages/doctors.html css/doctors.css
+git commit -m "feat: add doctors page with directory, roster and add-doctor form"
+git push -u origin feature/doctor
 ```
  
-## How to run
+Then open a Pull Request on GitHub: base = `dev`, compare = `feature/doctor`.
  
-Download or clone the repository, then open `index.html` in any modern browser (Chrome, Edge, Firefox).
-No installation or build step is required.
+**Rules**
+- Only add your own two files (`pages/doctors.html`, `css/doctors.css`). Never `git add .`.
+- Don't push your local copy of `css/style.css` — it's there only so the page previews correctly on your machine.
+- Pull `dev` before you start working each time, to stay in sync with the rest of the team.
+## Notes
  
-To run the automated test suite, open `tests/tests.html`.
- 
-## Documentation
- 
-- [User Guide](docs/USER_GUIDE.md)
-- [Technical Documentation](docs/TECHNICAL_DOCS.md)
-- [Team Work Division](docs/TEAM_WORK.md)
-## Expected outcome
- 
-An interactive tool for exploring genomic datasets with smooth, scalable client-side rendering, real-time
-filtering, and a detailed view of any selected variant — usable directly in a web browser with no installation.
- 
-## Future scope
- 
-Larger/real-time dataset support, advanced filters (position, allele-frequency bins), additional visualizations
-(mutation heat-maps, comparative chromosome views), cloud/database integration, richer export and reporting
-(PDF), and performance work such as Web Workers and progressive rendering.
- 
-## License
- 
-Academic project submitted for Mini Project-1, GLA University. For educational use only.
+- Search and the "Add doctor" form are visual only — there's no JavaScript in this project, so they don't
+  actually filter or save data. Sample doctors are hard-coded in the HTML.
+- Fonts load from the internet; offline you'll see the system font instead.
  
