@@ -112,6 +112,6 @@ function loadDoctors(filter = '') {
 document.getElementById('searchInput').addEventListener('input', function() {
     loadDoctors(this.value);
 });
-
+loadDoctors();
 
 
