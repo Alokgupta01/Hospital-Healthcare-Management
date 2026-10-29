@@ -50,5 +50,17 @@ function toggleAvailability(id) {
     loadDoctors(document.getElementById('searchInput').value);
 }
 
+function deleteDoctor(id) {
+    if (!confirm('Remove this doctor?')) return;
+
+    saveData(
+        'doctors',
+        getData('doctors').filter(d => d.id !== id)
+    );
+
+    showAlert('alertBox', 'Doctor removed.', 'success');
+    loadDoctors();
+}
+
 
 
