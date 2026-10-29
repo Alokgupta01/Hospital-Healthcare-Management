@@ -109,5 +109,9 @@ function loadDoctors(filter = '') {
     `).join('');
 }
 
+document.getElementById('searchInput').addEventListener('input', function() {
+    loadDoctors(this.value);
+});
+
 
 
