@@ -62,5 +62,52 @@ function deleteDoctor(id) {
     loadDoctors();
 }
 
+function loadDoctors(filter = '') {
+    const doctors = getData('doctors');
+    const tbody = document.getElementById('doctorTable');
+
+    const filtered = doctors.filter(d =>
+        d.name.toLowerCase().includes(filter.toLowerCase()) ||
+        d.specialization.toLowerCase().includes(filter.toLowerCase())
+    );
+
+    if (filtered.length === 0) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="8" class="no-data">
+                    ${filter ? 'No doctor found.' : 'No doctors added yet.'}
+                </td>
+            </tr>
+        `;
+        return;
+    }
+
+    tbody.innerHTML = filtered.map((d, i) => `
+        <tr>
+            <td>${i + 1}</td>
+            <td><strong>Dr. ${d.name}</strong></td>
+            <td>${d.specialization}</td>
+            <td>${d.experience} yrs</td>
+            <td>₹${d.fee}</td>
+            <td>${d.phone}</td>
+            <td>
+                <span class="badge badge-${d.available ? 'available' : 'unavailable'}">
+                    ${d.available ? 'Available' : 'Unavailable'}
+                </span>
+            </td>
+            <td>
+                <button class="btn btn-warning btn-sm"
+                    onclick="toggleAvailability('${d.id}')">
+                    Toggle
+                </button>
+                <button class="btn btn-danger btn-sm"
+                    onclick="deleteDoctor('${d.id}')">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    `).join('');
+}
+
 
 
