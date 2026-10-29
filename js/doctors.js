@@ -37,5 +37,18 @@ document.getElementById('doctorForm').addEventListener('submit', function(e) {
 
     this.reset();
     loadDoctors();
+    
+function toggleAvailability(id) {
+    const doctors = getData('doctors').map(d => {
+        if (d.id === id) {
+            d.available = !d.available;
+        }
+        return d;
+    });
+
+    saveData('doctors', doctors);
+    loadDoctors(document.getElementById('searchInput').value);
+}
+
 
 
