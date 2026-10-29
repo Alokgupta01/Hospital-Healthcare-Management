@@ -1,117 +1,61 @@
-document.getElementById('doctorForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-});
 
-    const name = document.getElementById('docName').value.trim();
-    const specialization = document.getElementById('specialization').value;
-    const experience = document.getElementById('experience').value.trim();
-    const fee = document.getElementById('fee').value.trim();
-    const phone = document.getElementById('docPhone').value.trim();
-    
-    if (!name || !specialization || !experience || !fee || !phone) {
-        showAlert('alertBox', 'Please fill all fields!', 'error');
+function addDoctor() {
+
+    let name = document.getElementById("docName").value;
+    let specialization = document.getElementById("specialization").value;
+    let experience = document.getElementById("experience").value;
+    let fee = document.getElementById("fee").value;
+    let phone = document.getElementById("docPhone").value;
+
+    if (name === "" || specialization === "" ||
+        experience === "" || fee === "" || phone === "") {
+        alert("Please fill all fields!");
         return;
     }
 
-    if (phone.length !== 10 || isNaN(phone)) {
-        showAlert('alertBox', 'Enter a valid 10-digit phone number!', 'error');
-        return;
-    }
-    
-    const doctors = getData('doctors');
+    let doctors = JSON.parse(localStorage.getItem("doctors")) || [];
 
-    doctors.push({
-        id: generateId(),
-        name,
-        specialization,
-        experience,
-        fee,
-        phone,
-        available: true,
-        addedOn: new Date().toLocaleDateString()
-    });
+    let doctor = {
+        name: name,
+        specialization: specialization,
+        experience: experience,
+        fee: fee,
+        phone: phone
+    };
 
-    saveData('doctors', doctors);
+    doctors.push(doctor);
 
-    showAlert('alertBox', `Dr. ${name} added successfully!`, 'success');
+    localStorage.setItem("doctors", JSON.stringify(doctors));
 
-    this.reset();
-    loadDoctors();
-    
-function toggleAvailability(id) {
-    const doctors = getData('doctors').map(d => {
-        if (d.id === id) {
-            d.available = !d.available;
-        }
-        return d;
-    });
+    alert("Doctor added successfully!");
 
-    saveData('doctors', doctors);
-    loadDoctors(document.getElementById('searchInput').value);
+    document.getElementById("doctorForm").reset();
+
+    showDoctors();
 }
 
-function deleteDoctor(id) {
-    if (!confirm('Remove this doctor?')) return;
 
-    saveData(
-        'doctors',
-        getData('doctors').filter(d => d.id !== id)
-    );
+function showDoctors() {
 
-    showAlert('alertBox', 'Doctor removed.', 'success');
-    loadDoctors();
-}
+    let doctors = JSON.parse(localStorage.getItem("doctors")) || [];
 
-function loadDoctors(filter = '') {
-    const doctors = getData('doctors');
-    const tbody = document.getElementById('doctorTable');
+    let table = document.getElementById("doctorTable");
 
-    const filtered = doctors.filter(d =>
-        d.name.toLowerCase().includes(filter.toLowerCase()) ||
-        d.specialization.toLowerCase().includes(filter.toLowerCase())
-    );
+    table.innerHTML = "";
 
-    if (filtered.length === 0) {
-        tbody.innerHTML = `
+    for (let i = 0; i < doctors.length; i++) {
+
+        table.innerHTML += `
             <tr>
-                <td colspan="8" class="no-data">
-                    ${filter ? 'No doctor found.' : 'No doctors added yet.'}
-                </td>
+                <td>${i + 1}</td>
+                <td>${doctors[i].name}</td>
+                <td>${doctors[i].specialization}</td>
+                <td>${doctors[i].experience}</td>
+                <td>${doctors[i].fee}</td>
+                <td>${doctors[i].phone}</td>
             </tr>
         `;
-        return;
     }
-
-    tbody.innerHTML = filtered.map((d, i) => `
-        <tr>
-            <td>${i + 1}</td>
-            <td><strong>Dr. ${d.name}</strong></td>
-            <td>${d.specialization}</td>
-            <td>${d.experience} yrs</td>
-            <td>₹${d.fee}</td>
-            <td>${d.phone}</td>
-            <td>
-                <span class="badge badge-${d.available ? 'available' : 'unavailable'}">
-                    ${d.available ? 'Available' : 'Unavailable'}
-                </span>
-            </td>
-            <td>
-                <button class="btn btn-warning btn-sm"
-                    onclick="toggleAvailability('${d.id}')">
-                    Toggle
-                </button>
-                <button class="btn btn-danger btn-sm"
-                    onclick="deleteDoctor('${d.id}')">
-                    Delete
-                </button>
-            </td>
-        </tr>
-    `).join('');
 }
 
-document.getElementById('searchInput').addEventListener('input', function() {
-    loadDoctors(this.value);
-});
-loadDoctors();
-
-
+showDoctors();
