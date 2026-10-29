@@ -1,27 +1,23 @@
-document.getElementById('patientForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const name       = document.getElementById('name').value.trim();
-  const age        = document.getElementById('age').value.trim();
-  const gender     = document.getElementById('gender').value;
-  const bloodGroup = document.getElementById('bloodGroup').value;
-  const phone      = document.getElementById('phone').value.trim();
-  const dob        = document.getElementById('dob').value;
-  const address    = document.getElementById('address').value.trim();
-  const history    = document.getElementById('history').value.trim();
 
-  if (!name || !age || !gender || !bloodGroup || !phone || !address) {
-    showAlert('alertBox', '⚠️ Please fill all required fields!', 'error'); return;
-  }
-  if (phone.length !== 10 || isNaN(phone)) {
-    showAlert('alertBox', '⚠️ Enter a valid 10-digit phone number!', 'error'); return;
-  }
-  if (parseInt(age) < 1 || parseInt(age) > 120) {
-    showAlert('alertBox', '⚠️ Enter a valid age between 1–120!', 'error'); return;
-  }
+function validatePatient() {
+    let name = document.getElementById('name').value;
+    let age = document.getElementById('age').value;
+    let gender = document.getElementById('gender').value;
+    let bloodGroup = document.getElementById('bloodGroup').value;
+    let phone = document.getElementById('phone').value;
+    let address = document.getElementById('address').value;
 
-  const patients = getData('patients');
-  patients.push({ id: generateId(), name, age, gender, bloodGroup, phone, dob, address, history, registeredOn: new Date().toLocaleDateString() });
-  saveData('patients', patients);
-  showAlert('alertBox', `✅ Patient "${name}" registered successfully!`, 'success');
-  this.reset();
-});
+    if (name == "" || age == "" || gender == "" ||
+        bloodGroup == "" || phone == "" || address == "") {
+        alert("Please fill all required fields!");
+    }
+    else if (age < 1 || age > 120) {
+        alert("Enter age between 1 and 120!");
+    }
+    else if (phone.length != 10 || isNaN(phone)) {
+        alert("Enter a valid 10-digit phone number!");
+    }
+    else {
+        alert("Patient details are valid!");
+    }
+}
