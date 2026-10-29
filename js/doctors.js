@@ -17,4 +17,25 @@ document.getElementById('doctorForm').addEventListener('submit', function(e) {
         showAlert('alertBox', 'Enter a valid 10-digit phone number!', 'error');
         return;
     }
+    
+    const doctors = getData('doctors');
+
+    doctors.push({
+        id: generateId(),
+        name,
+        specialization,
+        experience,
+        fee,
+        phone,
+        available: true,
+        addedOn: new Date().toLocaleDateString()
+    });
+
+    saveData('doctors', doctors);
+
+    showAlert('alertBox', `Dr. ${name} added successfully!`, 'success');
+
+    this.reset();
+    loadDoctors();
+
 
