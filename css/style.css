@@ -161,3 +161,12 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--t
   .cols-2, .cols-3, .cols-4, .form-grid { grid-template-columns: 1fr; }
   .page-head h1 { font-size: 25px; }
 }
+
+/* ---------- Added for the JavaScript version (Leader) ---------- */
+.alert { display: none; padding: 11px 14px; border-radius: 8px; margin-bottom: 14px; font-size: 14.5px; font-weight: 500; }
+.alert-success { background: var(--green-tint); color: var(--green); border-left: 4px solid var(--green); }
+.alert-error { background: var(--red-tint); color: var(--red); border-left: 4px solid var(--red); }
+.no-data { text-align: center; color: var(--muted); padding: 22px 14px; }
+.btn-success { background: var(--green); color: #fff; }
+.btn-block { display: block; width: 100%; }
+button.btn:disabled { opacity: .6; cursor: not-allowed; }
