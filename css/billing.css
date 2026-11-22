@@ -1,0 +1,19 @@
+/* Billing page styles - mem3 */
+.invoice-meta { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 18px; font-size: 14.5px; }
+.invoice-meta small { display: block; color: var(--muted); }
+.totals { margin-left: auto; margin-top: 16px; max-width: 280px; }
+.totals div { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14.5px; }
+.totals .grand { border-top: 2px solid var(--ink); margin-top: 6px; padding-top: 10px; font-family: var(--font-head); font-size: 20px; font-weight: 700; }
+
+/* Payment method - pure CSS radio cards */
+.methods { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.methods input { position: absolute; opacity: 0; width: 0; height: 0; }
+.methods label { border: 1.5px solid var(--line); border-radius: 8px; padding: 12px 14px; cursor: pointer; text-align: center; background: #fff; font-weight: 500; }
+.methods label:hover { border-color: var(--teal); }
+.methods input:checked + label { border-color: var(--teal); background: var(--teal-tint); color: var(--teal-dark); font-weight: 600; }
+.methods input:focus-visible + label { outline: 3px solid #f0a92e; outline-offset: 2px; }
+.group-label { font-weight: 600; font-size: 14px; }
+.bill-layout { grid-template-columns: 1.7fr 1fr; }
+@media (max-width: 960px) { .bill-layout { grid-template-columns: 1fr; } }
+.bill-layout td, .bill-layout th { white-space: nowrap; }
+.bill-layout { grid-template-columns: 1.9fr 1fr; }

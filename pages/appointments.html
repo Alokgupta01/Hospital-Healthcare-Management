@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointments - HHMS</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/appointments.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="../index.html"><span class="brand-mark">+</span>HHMS</a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open menu">&#9776;</label>
+    <nav class="nav-links"><a href="../index.html">Home</a><a href="patients.html">Patients</a><a href="records.html">Records</a><a href="doctors.html">Doctors</a><a href="appointments.html" class="active">Appointments</a><a href="billing.html">Billing</a><a href="admin.html">Admin</a></nav>
+  </header>
+
+  <main class="container">
+    <div class="page-head">
+      <div>
+        <h1>Appointments</h1>
+        <p>Book a visit and keep track of today's schedule.</p>
+      </div>
+    </div>
+
+    <section class="grid cols-4 mb">
+      <div class="stat"><b>36</b><span>Today</span></div>
+      <div class="stat info"><b>21</b><span>Confirmed</span></div>
+      <div class="stat warn"><b>11</b><span>Waiting</span></div>
+      <div class="stat danger"><b>4</b><span>Cancelled</span></div>
+    </section>
+
+    <section class="grid book-layout mb">
+      <div class="card">
+        <h2>Book an appointment</h2>
+        <form>
+          <div class="form-grid">
+            <div class="field"><label for="a-patient">Patient</label>
+              <select id="a-patient"><option>Rohan Sharma (P-1001)</option><option>Priya Verma (P-1002)</option><option>Mohit Kumar (P-1003)</option><option>Sneha Gupta (P-1004)</option></select>
+            </div>
+            <div class="field"><label for="a-dept">Department</label>
+              <select id="a-dept"><option>Cardiology</option><option>Orthopedics</option><option>Pediatrics</option><option>General medicine</option></select>
+            </div>
+            <div class="field"><label for="a-doctor">Doctor</label>
+              <select id="a-doctor"><option>Dr. Anjali Mehra</option><option>Dr. Vikram Rao</option><option>Dr. Neha Kapoor</option><option>Dr. Suresh Nair</option></select>
+            </div>
+            <div class="field"><label for="a-date">Date</label><input id="a-date" type="date"></div>
+
+            <div class="field full">
+              <span class="group-label">Choose a time slot</span>
+              <div class="slots">
+                <input type="radio" name="slot" id="s1"><label for="s1">09:00 AM</label>
+                <input type="radio" name="slot" id="s2"><label for="s2">09:30 AM</label>
+                <input type="radio" name="slot" id="s3" checked><label for="s3">10:00 AM</label>
+                <input type="radio" name="slot" id="s4"><label for="s4">10:30 AM</label>
+                <input type="radio" name="slot" id="s5" disabled><label for="s5">11:00 AM</label>
+                <input type="radio" name="slot" id="s6"><label for="s6">11:30 AM</label>
+                <input type="radio" name="slot" id="s7"><label for="s7">12:00 PM</label>
+                <input type="radio" name="slot" id="s8" disabled><label for="s8">12:30 PM</label>
+              </div>
+            </div>
+
+            <div class="field full"><label for="a-reason">Reason for visit</label><textarea id="a-reason" placeholder="Symptoms or purpose of the visit"></textarea></div>
+          </div>
+          <div class="modal-actions">
+            <button class="btn btn-outline" type="reset">Clear form</button>
+            <button class="btn btn-primary" type="button">Confirm appointment</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>Up next</h2>
+        <ul class="upnext">
+          <li><time>10:00 AM</time><div>Rohan Sharma<small>Dr. Anjali Mehra, Cardiology</small></div></li>
+          <li><time>11:30 AM</time><div>Sneha Gupta<small>Dr. Vikram Rao, Orthopedics</small></div></li>
+          <li><time>12:15 PM</time><div>Kabir Singh<small>Dr. Neha Kapoor, Pediatrics</small></div></li>
+          <li><time>02:00 PM</time><div>Meena Devi<small>Dr. Suresh Nair, General medicine</small></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>All appointments</h2>
+      <div class="toolbar">
+        <input type="search" placeholder="Search patient or doctor" aria-label="Search appointments">
+        <div class="chips">
+          <a href="#" class="on">All</a>
+          <a href="#">Confirmed</a>
+          <a href="#">Waiting</a>
+          <a href="#">Completed</a>
+          <a href="#">Cancelled</a>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Token</th><th>Patient</th><th>Doctor</th><th>Date and time</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>A-201</td><td>Rohan Sharma</td><td>Dr. Anjali Mehra</td><td>21 Sep, 10:00 AM</td><td><span class="badge badge-green">Completed</span></td><td><a class="btn btn-outline btn-sm" href="billing.html">Create bill</a></td></tr>
+            <tr><td>A-202</td><td>Sneha Gupta</td><td>Dr. Vikram Rao</td><td>21 Sep, 11:30 AM</td><td><span class="badge badge-amber">Waiting</span></td><td><a class="btn btn-outline btn-sm" href="#">Reschedule</a></td></tr>
+            <tr><td>A-203</td><td>Kabir Singh</td><td>Dr. Neha Kapoor</td><td>21 Sep, 12:15 PM</td><td><span class="badge badge-blue">Confirmed</span></td><td><a class="btn btn-outline btn-sm" href="#">Reschedule</a></td></tr>
+            <tr><td>A-204</td><td>Meena Devi</td><td>Dr. Suresh Nair</td><td>21 Sep, 02:00 PM</td><td><span class="badge badge-blue">Confirmed</span></td><td><a class="btn btn-outline btn-sm" href="#">Reschedule</a></td></tr>
+            <tr><td>A-205</td><td>Farhan Ali</td><td>Dr. Suresh Nair</td><td>21 Sep, 03:30 PM</td><td><span class="badge badge-red">Cancelled</span></td><td><a class="btn btn-outline btn-sm" href="#">Rebook</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">HHMS - Hospital and Healthcare Management System &middot; GLA University, Mathura</footer>
+</body>
+</html>
