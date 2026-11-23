@@ -120,3 +120,96 @@
     if (getData('doctors').length === 0) {
         saveData('doctors', defaultDoctors);
     }
+
+    // Display doctor cards
+
+    function renderCards() {
+
+        var all = getData('doctors');
+
+        var q = query.toLowerCase();
+
+        var list = all.filter(function (d) {
+
+            if (filter !== 'All' &&
+                d.specialization !== specFor(filter)) {
+                return false;
+            }
+
+            return !q ||
+                d.name.toLowerCase().includes(q) ||
+                d.specialization.toLowerCase().includes(q);
+        });
+
+        $('doctorGrid').innerHTML = list.length
+            ? list.map(function (d) {
+
+                var available = d.available !== false;
+
+                return `
+                    <article class="doc-card">
+
+                        <div class="doc-top">
+                            <span class="avatar avatar-lg">
+                                ${esc(initials(d.name))}
+                            </span>
+
+                            <div>
+                                <h3>Dr. ${esc(d.name)}</h3>
+                                <span class="muted">
+                                    ${esc(d.specialization)}
+                                </span>
+                            </div>
+                        </div>
+
+                        <dl class="doc-facts">
+
+                            <div>
+                                <dt>Experience</dt>
+                                <dd>${esc(d.experience)} years</dd>
+                            </div>
+
+                            <div>
+                                <dt>Timing</dt>
+                                <dd>${esc(d.timing)}</dd>
+                            </div>
+
+                            <div>
+                                <dt>Consultation fee</dt>
+                                <dd>${esc(fmtMoney(d.fee))}</dd>
+                            </div>
+
+                            <div>
+                                <dt>Phone</dt>
+                                <dd>${esc(d.phone)}</dd>
+                            </div>
+
+                        </dl>
+
+                        <div class="doc-foot">
+
+                            <span class="${badgeFor(
+                                available ? 'Available' : 'Unavailable'
+                            )}">
+                                ${available ? 'Available today' : 'On leave'}
+                            </span>
+
+                            <a class="btn btn-primary btn-sm"
+                               href="appointments.html?doctor=${encodeURIComponent(d.id)}">
+                                Book
+                            </a>
+
+                        </div>
+
+                    </article>
+                `;
+
+            }).join('')
+
+            : '<p class="no-data">No doctors found</p>';
+    }
+
+    // Show doctors on page
+
+    renderCards();
+
