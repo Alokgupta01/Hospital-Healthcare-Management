@@ -223,3 +223,45 @@
 
     });
 
+    // Department filter buttons
+
+    function renderChips() {
+
+        var departments = ['All'].concat(DEPTS);
+
+        $('chips').innerHTML = departments.map(function (dept) {
+
+            return `
+                <a href="#"
+                   data-filter="${dept}"
+                   class="${dept === filter ? 'on' : ''}">
+                    ${dept}
+                </a>
+            `;
+
+        }).join('');
+    }
+
+    // Handle department selection
+
+    $('chips').addEventListener('click', function (e) {
+
+        var selected = e.target.closest('a[data-filter]');
+
+        if (!selected) {
+            return;
+        }
+
+        e.preventDefault();
+
+        filter = selected.getAttribute('data-filter');
+
+        renderChips();
+        renderCards();
+
+    });
+
+    // Display department buttons
+
+    renderChips();
+
