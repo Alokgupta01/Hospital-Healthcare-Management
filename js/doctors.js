@@ -265,3 +265,97 @@
 
     renderChips();
 
+    // Add new doctor
+
+    function addDoctor() {
+
+        var name = $('d-name').value.trim();
+        var exp = $('d-exp').value.trim();
+        var fee = $('d-fee').value.trim();
+        var phone = $('d-phone').value.trim();
+
+        // Check required fields
+
+        if (!name || !exp || !fee || !phone) {
+            showAlert('formMsg', 'Please fill all required fields.', 'error');
+            return;
+        }
+
+        // Validate experience
+
+        if (+exp < 0 || +exp > 70) {
+            showAlert('formMsg', 'Enter valid experience.', 'error');
+            return;
+        }
+
+        // Validate fee
+
+        if (+fee < 0) {
+            showAlert('formMsg', 'Fee cannot be negative.', 'error');
+            return;
+        }
+
+        // Validate phone number
+
+        if (!/^\d{10}$/.test(phone)) {
+            showAlert('formMsg', 'Enter valid 10-digit phone number.', 'error');
+            return;
+        }
+
+        // Get availability timing
+
+        var from = $('d-from').value;
+        var to = $('d-to').value;
+
+        if (from && to && from >= to) {
+            showAlert('formMsg', 'Enter valid timing.', 'error');
+            return;
+        }
+
+        var timing = '9 AM to 5 PM';
+
+        if (from && to) {
+            timing = from + ' to ' + to;
+        }
+
+        // Create doctor object
+
+        var doctor = {
+            id: generateId(),
+            name: name.replace(/^Dr\.?\s*/i, ''),
+            specialization: specFor($('d-dept').value),
+            experience: exp,
+            fee: fee,
+            phone: phone,
+            timing: timing,
+            available: true
+        };
+
+        // Save doctor
+
+        var doctors = getData('doctors');
+
+        doctors.push(doctor);
+
+        saveData('doctors', doctors);
+
+        // Reset form
+
+        $('doctorForm').reset();
+
+        // Close popup
+
+        location.hash = '';
+
+        showAlert('msg', 'Doctor added successfully!', 'success');
+
+        // Refresh cards
+
+        renderCards();
+        renderChips();
+    }
+
+    // Save button click
+
+    $('saveBtn').addEventListener('click', addDoctor);
+
