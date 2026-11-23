@@ -213,3 +213,13 @@
 
     renderCards();
 
+    // Doctor search functionality
+
+    $('search').addEventListener('input', function () {
+
+        query = $('search').value.trim();
+
+        renderCards();
+
+    });
+
