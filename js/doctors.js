@@ -1,61 +1,51 @@
+(function () {
 
-function addDoctor() {
+    // Doctors module setup
 
-    let name = document.getElementById("docName").value;
-    let specialization = document.getElementById("specialization").value;
-    let experience = document.getElementById("experience").value;
-    let fee = document.getElementById("fee").value;
-    let phone = document.getElementById("docPhone").value;
-
-    if (name === "" || specialization === "" ||
-        experience === "" || fee === "" || phone === "") {
-        alert("Please fill all fields!");
-        return;
-    }
-
-    let doctors = JSON.parse(localStorage.getItem("doctors")) || [];
-
-    let doctor = {
-        name: name,
-        specialization: specialization,
-        experience: experience,
-        fee: fee,
-        phone: phone
+    var $ = function (id) {
+        return document.getElementById(id);
     };
 
-    doctors.push(doctor);
+    // Department list
 
-    localStorage.setItem("doctors", JSON.stringify(doctors));
+    var DEPTS = [
+        'Cardiology',
+        'Orthopedics',
+        'Pediatrics',
+        'General medicine',
+        'Dermatology'
+    ];
 
-    alert("Doctor added successfully!");
+    // Current filter and search
 
-    document.getElementById("doctorForm").reset();
+    var filter = 'All';
+    var query = '';
 
-    showDoctors();
-}
+    // Convert department into specialization
 
+    function specFor(dept) {
 
-function showDoctors() {
+        if (dept === 'Cardiology') {
+            return 'Cardiologist';
+        }
 
-    let doctors = JSON.parse(localStorage.getItem("doctors")) || [];
+        if (dept === 'Orthopedics') {
+            return 'Orthopedic';
+        }
 
-    let table = document.getElementById("doctorTable");
+        if (dept === 'Pediatrics') {
+            return 'Pediatrician';
+        }
 
-    table.innerHTML = "";
+        if (dept === 'General medicine') {
+            return 'General Physician';
+        }
 
-    for (let i = 0; i < doctors.length; i++) {
+        if (dept === 'Dermatology') {
+            return 'Dermatologist';
+        }
 
-        table.innerHTML += `
-            <tr>
-                <td>${i + 1}</td>
-                <td>${doctors[i].name}</td>
-                <td>${doctors[i].specialization}</td>
-                <td>${doctors[i].experience}</td>
-                <td>${doctors[i].fee}</td>
-                <td>${doctors[i].phone}</td>
-            </tr>
-        `;
+        return dept;
     }
-}
 
-showDoctors();
+})();
